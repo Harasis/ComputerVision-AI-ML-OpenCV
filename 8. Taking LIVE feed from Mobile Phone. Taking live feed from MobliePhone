@@ -1,0 +1,83 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#cv2 module has a capability to get the live feed from other camera like your mobile\n",
+    "#the mobile should be connected to the same ip\n",
+    "#we have to download app called \"IP Webcam\" in android mob\n",
+    "#go in app goto \"Start server\" in the end and it will start the camera\n",
+    "#there are some url in the bottom of camera- "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import cv2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "cap = cv2.VideoCapture('http://192.168.1.32:8080//video')\n",
+    "\n",
+    "#previously we are putting 0 here\n",
+    "#now we put the url given by the app \"...../video\" here\n",
+    "#rest of the code will remain same"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "while True:\n",
+    "    ret, photo = cap.read()\n",
+    "    cv2.imshow(\"hi\", photo)\n",
+    "    if cv2.waitKey(1) == 13:\n",
+    "        break\n",
+    "cv2.destroyAllWindows()\n",
+    "cap.release()\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
